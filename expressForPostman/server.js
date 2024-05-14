@@ -90,7 +90,7 @@ app.delete("/beverages/:id", async (req, res) => {
   
       await writeData(data); 
   
-      res.json(deletedItem); 
+      res.status(204).json(deletedItem);
     } catch (error) {
       res.status(500).send("Error deleting item: " + error.message);
     }
